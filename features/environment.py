@@ -12,9 +12,9 @@ def browser_init(context, scenario_name):
     :param context: Behave context
     """
     # Chrome browser configuration:
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # Firefox browser configuration:
     # driver_path = GeckoDriverManager().install()
@@ -33,15 +33,15 @@ def browser_init(context, scenario_name):
     # )
 
     # firefox headless
-
-    options = webdriver.FirefoxOptions()
-    options.add_argument('--headless')
-    options.add_argument('--window--size=1920*1080')
-    service = Service(GeckoDriverManager().install())
-    context.driver = webdriver.Firefox(
-        options=options,
-        service=service
-    )
+    #
+    # options = webdriver.FirefoxOptions()
+    # options.add_argument('--headless')
+    # options.add_argument('--window--size=1920*1080')
+    # service = Service(GeckoDriverManager().install())
+    # context.driver = webdriver.Firefox(
+    #     options=options,
+    #     service=service
+    # )
 
     # browserstack
     #
