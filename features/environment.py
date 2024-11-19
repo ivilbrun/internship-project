@@ -23,25 +23,25 @@ def browser_init(context, scenario_name):
 
     # headless configuration for chrome:
 
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--window--size=1920*1080')
-    service = Service(ChromeDriverManager().install())
-    context.driver = webdriver.Chrome(
-        options=options,
-        service=service
-    )
-
-    # firefox headless
-
-    # options = webdriver.FirefoxOptions()
+    # options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
     # options.add_argument('--window--size=1920*1080')
-    # service = Service(GeckoDriverManager().install())
-    # context.driver = webdriver.Firefox(
+    # service = Service(ChromeDriverManager().install())
+    # context.driver = webdriver.Chrome(
     #     options=options,
     #     service=service
     # )
+
+    # firefox headless
+
+    options = webdriver.FirefoxOptions()
+    options.add_argument('--headless')
+    options.add_argument('--window--size=1920*1080')
+    service = Service(GeckoDriverManager().install())
+    context.driver = webdriver.Firefox(
+        options=options,
+        service=service
+    )
 
     # browserstack
     #
