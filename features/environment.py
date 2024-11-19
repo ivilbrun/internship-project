@@ -23,14 +23,14 @@ def browser_init(context, scenario_name):
 
     # headless configuration for chrome:
 
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
-    # options.add_argument('--window--size=1920*1080')
-    # service = Service(ChromeDriverManager().install())
-    # context.driver = webdriver.Chrome(
-    #     options=options,
-    #     service=service
-    # )
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--window--size=1920*1080')
+    service = Service(ChromeDriverManager().install())
+    context.driver = webdriver.Chrome(
+        options=options,
+        service=service
+    )
 
     # firefox headless
 
@@ -44,21 +44,21 @@ def browser_init(context, scenario_name):
     # )
 
     # browserstack
-
-    bs_user = 'ilarievilbrun_vaPklz'
-    bs_key = '5ABFyZyFfdFgLfGyY3Av'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        'os': 'Windows',
-        'osVersion': '11',
-        'browserName': 'chrome',
-        'sessionName': scenario_name,
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
-
+    #
+    # bs_user = 'ilarievilbrun_vaPklz'
+    # bs_key = '5ABFyZyFfdFgLfGyY3Av'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     'os': 'Windows',
+    #     'osVersion': '11',
+    #     'browserName': 'chrome',
+    #     'sessionName': scenario_name,
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
+    #
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.app = Application(context.driver)
