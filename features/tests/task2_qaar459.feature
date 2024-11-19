@@ -1,7 +1,7 @@
 Feature: User log in & User Guide
 
   Scenario: User can open User guide page
-    Given open Reelly main page
+    Given open Reelly Sign In page
     When user logs in
     Then click on settings
     And click on User Guide option
