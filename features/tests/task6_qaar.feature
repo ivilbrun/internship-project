@@ -1,5 +1,5 @@
 Feature: User log in & User Guide
-
+git
   Scenario: User can open User guide page
     Given open Reelly Sign In page
     When user logs in

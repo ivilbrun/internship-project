@@ -12,8 +12,9 @@ class Signin(Page):
         self.open_url('https://soft.reelly.io/sign-in')
 
     def log_in(self):
-        sleep(3)
+        sleep(2)
         self.input_text('0120ilarievilbrun@gmail.com', *self.email_field)
         self.input_text('Ruth3630978@', *self.password_field)
         self.click(*self.login_btn)
-        sleep(5)
+        self.click(*self.login_btn)
+        # self.driver.find_element(*self.login_btn).click()

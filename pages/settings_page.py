@@ -4,7 +4,7 @@ from pages.base_page import Page
 
 
 class Settings(Page):
-    user_guide = (By.XPATH, "//a[@href='/user-guide'] //div[@class='setting-text']")
+    # user_guide = (By.XPATH, "//a[@href='/user-guide'] //div[@class='setting-text']")
     first_iframe_locator = (By.CSS_SELECTOR, '[class="ditals-block"] [class="embedly-embed"]')
     second_iframe_locator = (By.ID, 'player')
 
