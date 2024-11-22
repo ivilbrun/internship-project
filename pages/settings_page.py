@@ -9,9 +9,9 @@ class Settings(Page):
     second_iframe_locator = (By.ID, 'player')
 
     def click_user_guide_option(self):
+        self.driver.find_element(By.XPATH, "//a[@href='/main-menu'] //div[@class='circle-gradient']").click()
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        sleep(2)
-        self.driver.find_element(By.XPATH, "//a[@href='/user-guide'] //div[@class='setting-text']").click()
+        self.driver.find_element(By.XPATH, "//a[@href='/user-guide'] //div[@class='icon-text-block-menu']").click()
         sleep(2)
 
     def verify_right_page(self):
